@@ -10,6 +10,10 @@ import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
+import CreateRun from './components/runs/CreateRun'
+import IndexRuns from './components/runs/IndexRuns'
+import ShowRun from './components/runs/ShowRun'
+import UpdateRun from './components/runs/UpdateRun'
 
 class App extends Component {
   constructor (props) {
@@ -84,6 +88,34 @@ class App extends Component {
             path='/change-password'
             render={() => (
               <ChangePassword msgAlert={this.msgAlert} user={user} />
+            )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            path='/create-run'
+            render={() => (
+              <CreateRun msgAlert={this.msgAlert} user={user}/>
+            )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            exact
+            path='/runs'
+            render={() => <IndexRuns msgAlert={this.msgAlert} user={user}/>}
+          />
+          <AuthenticatedRoute
+            user={user}
+            exact
+            path='/runs/:id'
+            render={() => (
+              <ShowRun user={user} msgAlert={this.msgAlert}/>
+            )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            path='/runs/:id/edit'
+            render={() => (
+              <UpdateRun user={user} msgAlert={this.msgAlert}/>
             )}
           />
         </main>
