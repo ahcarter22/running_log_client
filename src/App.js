@@ -16,7 +16,14 @@ import ShowRun from './components/runs/ShowRun'
 import UpdateRun from './components/runs/UpdateRun'
 
 class App extends Component {
+  // set the state in the constructor
+  // constructor function sets up the component for the first time
+  // with any initial data
+  // NOT react specific - vanilla JS
   constructor (props) {
+    // takes props from constructor and passes them to super
+    // brings in parent constructor
+    // allows us to override things setup by the Component class
     super(props)
     this.state = {
       user: null,

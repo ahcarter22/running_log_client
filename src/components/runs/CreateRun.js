@@ -28,7 +28,7 @@ handleSubmit = (event) => {
   const { user, msgAlert, history } = this.props
 
   createRun(this.state, user)
-    .then((res) => history.push('/runs/' + res.data.run._id))
+    .then((res) => history.push('/runs/' + res.data.run.id))
     .then(() =>
       msgAlert({
         heading: 'Run Created!',

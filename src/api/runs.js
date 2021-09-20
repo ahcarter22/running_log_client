@@ -4,11 +4,11 @@ import apiUrl from '../apiConfig'
 import axios from 'axios'
 
 // Create Run Request
-// assume that `data` is an object with `title` and `shoe`
-// { title: 'something', shoe: 'someone' }
+// assume that `data` is an object with `distance` and `shoe`
+// { distance: 'something', shoe: 'someone' }
 export const createRun = (data, user) => {
   return axios({
-    url: apiUrl + '/runs',
+    url: apiUrl + '/runs/',
     method: 'post',
     data: { run: data },
     headers: {

@@ -3,9 +3,12 @@ import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import { Link, NavLink } from 'react-router-dom'
 
+// JSX defines the NavLinks for our user when they are signed in
 const authenticatedOptions = (
   <Fragment>
-    <NavLink to='/change-password' className='nav-link'>Change Password</NavLink>
+    <NavLink to='/create-run' className='nav-link'>Create Run</NavLink>
+    <NavLink to='/runs' className='nav-link'>View Runs</NavLink>
+    <NavLink to='/update-run' className='nav-link'>Update Run</NavLink>
     <NavLink to='/sign-out' className='nav-link'>Sign Out</NavLink>
   </Fragment>
 )
@@ -22,7 +25,7 @@ const alwaysOptions = (
     <NavLink exact to='/' className='nav-link'>Home</NavLink>
   </Fragment>
 )
-
+// Accepts 1 prop - the user object (App State)
 const Header = ({ user }) => (
   <Navbar bg='primary' variant='dark' expand='md'>
     <Navbar.Brand>

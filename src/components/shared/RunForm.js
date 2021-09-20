@@ -26,7 +26,7 @@ const RunForm = ({ run, handleSubmit, handleChange }) => (
       />
     </Form.Group>
     <Form.Group controlId='difficult'>
-      <Form.Label>Difficult?</Form.Label>
+      <Form.Label>Difficult</Form.Label>
       <Form.Control
         onChange={handleChange}
         required

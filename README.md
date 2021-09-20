@@ -1,10 +1,37 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
+# Running Log
 
-# react-auth-template
+This application allows users to input and log their runs within an online database. A "run" consists of distance, type of shoe ran in, and assessment of difficulty. I wanted to do this project because, as a runner, I find it valuable to keep track of my runs and assess my training and progress. 
 
-A front-end framework template for starting projects with a recent version of
-either the [Django API Template](https://git.generalassemb.ly/ga-wdi-boston/django-template)
-or the [Express API Template](https://git.generalassemb.ly/ga-wdi-boston/express-api-template).
+## Links
+
+API Repository
+
+Deployed API
+
+Deployed Client
+
+## User Story
+
+As a user, I want to be able to...
+
+- sign-up to create a profile
+- sign-in to my profile
+- change my profile password
+- sign-out of my profile
+- add "runs" to my profile
+- edit runs
+- delete runs
+- view all runs
+
+## Technologies Used
+
+- Django API
+- React
+
+## Wireframe
+
+
+
 
 ## Installation
 
@@ -30,15 +57,6 @@ To deploy you should first make sure you are on the `main` branch with a
 clean working directory, then you can run `npm run deploy` and wait to see if
 it runs successfully.
 
-## About
-
-This template is derived from GA Boston's [react-template](https://git.generalassemb.ly/ga-wdi-boston/react-template).
-Most of the development dependencies, such as linters, SCSS compiler, Webpack
-config, NPM scripts, etc in this repo come from there.
-
-It includes all the components and routes needed to sign up, sign in, change
-passwords, and sign out of an API built with either template linked above, with
-no need for modification.
 
 **NOTE**: You should customize the included components to suit you app! They're
 provided as a guide and a bare minimum of functionality and style. Consider
@@ -82,110 +100,7 @@ so they will use the `AuthenticatedRoute` component instead of the regular
 `Route`. This custom component is provided as part of the template, and is not
 a part of the React library (see more below).
 
-## Features
 
-### `<AuthenticatedRoute />`
-
-This template contains a handy component for creating routes that require a
-user to be authenticated before visiting. This component lives in
-`src/auth/components/AuthenticatedRoute.js` and is already required in `App`.
-It's a thin wrapper around React Router's `<Route />` component. The only
-difference is that it expects a prop called `user`, and if that prop is falsy,
-it will render a `<Redirect />` that takes the user to `/`. **To use
-it, you must pass it the user as a prop!**
-
-It supports both the `component=` and `render=` attributes, but like `<Route />`
-it will not forward props to the component if you use `component=`.
-
-### `<AutoDismissAlert />` Component
-
-This template also already contains a component that displays user messages.
-Messages are configurable via redux actions.  This component can be found in
-`src/components/AutoDismissAlert/AutoDismissAlert.js`. **There is no need to add
-this component to your app. It is already required in `App`.**  A single
-component instance is used to manage all alerts application-wide.
-
-The alert can be used by passing the `alertMsg` method to a rendered route.  The
-`alertMsg` method expects an object with a `heading`, `message`, and a `variant` property.
-
-Use this component in conjunction with the `messages.js` file in the same
-directory to create and manage all of your application messages in one place.
-
-The `variant` property must be a Bootstrap alert variant, as this component is merely a
-wrapper around the [react-bootstrap Alert
-component](https://react-bootstrap.github.io/components/alerts/).  The types it
-will accept are: 'primary', 'secondary', 'success', 'danger', 'warning', 'info',
-'light', and 'dark'.
-
- To change the duration of the message, replace `5000` with a value of your
- choice (in milliseconds) in this component's `componentDidMount` method.
-
-### `src/apiConfig.js`
-
-Just like in
-[browser-template](https://git.generalassemb.ly/ga-wdi-boston/browser-template),
-this file will determine whether you're in a production or development
-environment and choose an API URL accordingly. Don't forget to replace the
-`production` URL with your deployed API's URL.
-
-### Bootstrap
-
-This template includes two different implementations of the classic Bootstrap
-library we know and love.
-
-#### `bootstrap`
-
-The first implementation of Bootstrap comes from the `bootstrap` npm package,
-and provides all of the normal Bootstrap classes and styling we were able to
-use with the `browser-template`. This package is included in the
-`src/index.scss` file at the very top of the file. That means JSX in this
-template can utilize Bootstrap classes like `btn`, `container`, `row`, etc.
-
-See an example below:
-
-```jsx
-import React from 'react'
-
-const AboutPage = () => (
-  <div className="card">
-    <div className="card-body">
-      <h1 className="card-title">About Page</h1>
-      <p className="card-text">There is a Bootstrap card on this page!</p>
-    </div>
-  </div>
-)
-
-export default AboutPage
-```
-
-> Note: Remember to use `className` not `class` in your JSX!
-
-#### `react-bootstrap`
-
-In addition to the classic Bootstrap classes we can plug into our JSX, this
-template also comes with a special package called [`react-bootstrap`](https://react-bootstrap.github.io/).
-This package allows us to use special React components that have been pre-built
-according to the Bootstrap library.
-
-Import components from the `react-bootstrap` library, then use them just like
-regular components in your JSX!
-
-See an example below:
-
-```jsx
-import React from 'react'
-import Card from 'react-bootstrap/Card'
-
-const AboutPage = () => (
-  <Card>
-    <Card.Body>
-      <Card.Title>The About Page</Card.Title>
-      <Card.Text>There is a Bootstrap card on this page!</Card.Text>
-    </Card.Body>
-  </Card>
-)
-
-export default AboutPage
 ```
 
 ## Tasks

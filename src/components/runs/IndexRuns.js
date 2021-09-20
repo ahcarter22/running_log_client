@@ -26,6 +26,7 @@ class IndexRuns extends Component {
     const { user, msgAlert } = this.props
     indexRuns(user)
       .then((res) => this.setState({ runs: res.data.runs }))
+      .then(() => console.log(this.state.runs))
       .then(() =>
         msgAlert({
           heading: 'Index success',
@@ -57,8 +58,8 @@ class IndexRuns extends Component {
       // I want runJsx to be a bunch of li or Link or something with all my runs info in them
       // .map gives us back a new array that we can display
       runJsx = runs.map((run) => (
-        <li key={run._id}>
-          <Link to={`/runs/${run._id}`}>{run.distance}</Link>
+        <li key={run.id}>
+          <Link to={`/runs/${run.id}`}>{run.distance}</Link>
         </li>
       ))
     }
