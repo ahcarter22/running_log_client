@@ -1,6 +1,6 @@
 let apiUrl
 const apiUrls = {
-  production: 'https://git.heroku.com/ga-running-log.git',
+  production: 'https://ga-running-log.herokuapp.com',
   development: 'http://localhost:8000'
 }
 
