@@ -56,7 +56,7 @@ export const deleteRun = (id, user) => {
 // PATCH /runs/:id
 export const updateRun = (data, id, user) => {
   return axios({
-    url: apiUrl + '/runs/' + id,
+    url: apiUrl + `/runs/${id}/`,
     method: 'patch',
     data: { run: data },
     headers: {

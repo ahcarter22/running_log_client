@@ -8,7 +8,6 @@ const authenticatedOptions = (
   <Fragment>
     <NavLink to='/create-run' className='nav-link'>Create Run</NavLink>
     <NavLink to='/runs' className='nav-link'>View Runs</NavLink>
-    <NavLink to='/update-run' className='nav-link'>Update Run</NavLink>
     <NavLink to='/sign-out' className='nav-link'>Sign Out</NavLink>
   </Fragment>
 )

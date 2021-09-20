@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter, Link } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 // API request
 import { showRun, deleteRun } from '../../api/runs'
 
@@ -73,14 +73,9 @@ render () {
       <h5>{distance}</h5>
       <p>Ran in: {shoe}, and felt {difficult} that it was difficult.</p>
       {/* Compare the signed in user's ID against the owner of this run */}
-      {user._id === owner && (
+      {user.id === owner && (
         <>
           <Button onClick={this.handleDelete}>Delete This Run</Button>
-          {/* Button with a Link inside should work but is ugly. Better way below. */}
-          <Button>
-            <Link to={`/runs/${match.params.id}/edit`}>Update Run</Link>
-          </Button>
-
           {/* Provide the Button a `onClick` handler & use the history object to redirect the user */}
           <Button
             onClick={() => history.push(`/runs/${match.params.id}/edit`)}>

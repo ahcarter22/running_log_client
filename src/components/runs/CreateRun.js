@@ -31,14 +31,14 @@ handleSubmit = (event) => {
     .then((res) => history.push('/runs/' + res.data.run.id))
     .then(() =>
       msgAlert({
-        heading: 'Run Created!',
+        heading: 'Run Logged!',
         message: 'Nice work, go check out your run.',
         variant: 'success'
       })
     )
     .catch((err) => {
       msgAlert({
-        heading: 'Run creation failed :(',
+        heading: 'Run log failed :(',
         message: 'Something went wrong: ' + err.message,
         variant: 'danger'
       })
@@ -48,7 +48,7 @@ handleSubmit = (event) => {
 render () {
   return (
     <>
-      <h3>Create Run</h3>
+      <h3>Log your run</h3>
       <RunForm
         run={this.state}
         handleSubmit={this.handleSubmit}

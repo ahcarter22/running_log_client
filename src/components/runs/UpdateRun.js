@@ -66,7 +66,7 @@ class UpdateRun extends Component {
   render () {
     return (
       <>
-        <h3>Update One Run Page</h3>
+        <h3>Update Run</h3>
         <RunForm
           run={this.state.run}
           handleSubmit={this.handleSubmit}

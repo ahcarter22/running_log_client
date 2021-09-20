@@ -66,7 +66,7 @@ class IndexRuns extends Component {
 
     return (
       <>
-        <h3>All The Runs:</h3>
+        <h3>Runs Logged:</h3>
         {runJsx}
       </>
     )
