@@ -14,6 +14,7 @@ import CreateRun from './components/runs/CreateRun'
 import IndexRuns from './components/runs/IndexRuns'
 import ShowRun from './components/runs/ShowRun'
 import UpdateRun from './components/runs/UpdateRun'
+import Home from './components/Home/Home'
 
 class App extends Component {
   // set the state in the constructor
@@ -55,8 +56,8 @@ class App extends Component {
 
     return (
       <Fragment>
-	      <Header user={user} />
-	      {msgAlerts.map((msgAlert) => (
+        <Header user={user} />
+        {msgAlerts.map((msgAlert) => (
           <AutoDismissAlert
             key={msgAlert.id}
             heading={msgAlert.heading}
@@ -66,8 +67,8 @@ class App extends Component {
             deleteAlert={this.deleteAlert}
           />
         ))}
-	      <main className='container'>
-	        <Route
+        <main className='container'>
+          <Route
             path='/sign-up'
             render={() => (
               <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
@@ -77,6 +78,13 @@ class App extends Component {
             path='/sign-in'
             render={() => (
               <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
+            )}
+          />
+          <Route
+            path='/'
+            exact
+            render={() => (
+              <Home msgAlert={this.msgAlert} setUser={this.setUser} />
             )}
           />
           <AuthenticatedRoute
@@ -100,30 +108,24 @@ class App extends Component {
           <AuthenticatedRoute
             user={user}
             path='/create-run'
-            render={() => (
-              <CreateRun msgAlert={this.msgAlert} user={user}/>
-            )}
+            render={() => <CreateRun msgAlert={this.msgAlert} user={user} />}
           />
           <AuthenticatedRoute
             user={user}
             exact
             path='/runs'
-            render={() => <IndexRuns msgAlert={this.msgAlert} user={user}/>}
+            render={() => <IndexRuns msgAlert={this.msgAlert} user={user} />}
           />
           <AuthenticatedRoute
             user={user}
             exact
             path='/runs/:id'
-            render={() => (
-              <ShowRun user={user} msgAlert={this.msgAlert}/>
-            )}
+            render={() => <ShowRun user={user} msgAlert={this.msgAlert} />}
           />
           <AuthenticatedRoute
             user={user}
             path='/runs/:id/edit'
-            render={() => (
-              <UpdateRun user={user} msgAlert={this.msgAlert}/>
-            )}
+            render={() => <UpdateRun user={user} msgAlert={this.msgAlert} />}
           />
         </main>
       </Fragment>

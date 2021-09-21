@@ -59,7 +59,7 @@ class IndexRuns extends Component {
       // .map gives us back a new array that we can display
       runJsx = runs.map((run) => (
         <li key={run.id}>
-          <Link to={`/runs/${run.id}`}>{run.distance}</Link>
+          <Link to={`/runs/${run.id}`}>{run.distance} miles</Link>
         </li>
       ))
     }

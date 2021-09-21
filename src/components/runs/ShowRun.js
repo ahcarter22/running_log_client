@@ -69,8 +69,8 @@ render () {
 
   return (
     <>
-      <h3>Show One Run Page</h3>
-      <h5>{distance}</h5>
+      <h3>Run</h3>
+      <h5>{distance} miles</h5>
       <p>Ran in: {shoe}, and felt {difficult} that it was difficult.</p>
       {/* Compare the signed in user's ID against the owner of this run */}
       {user.id === owner && (

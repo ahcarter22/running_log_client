@@ -24,6 +24,7 @@ const alwaysOptions = (
     <NavLink exact to='/' className='nav-link'>Home</NavLink>
   </Fragment>
 )
+
 // Accepts 1 prop - the user object (App State)
 const Header = ({ user }) => (
   <Navbar bg='primary' variant='dark' expand='md'>
